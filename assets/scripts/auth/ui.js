@@ -23,6 +23,7 @@ const signOutSuccess = () => {
   console.log ('Signed out');
 };
 
+
 module.exports = {
   failure,
   success,
