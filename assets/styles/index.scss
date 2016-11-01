@@ -1,109 +1,120 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$body-background-color-left: #ffb3ff;
+$body-background-color-right: #b3ffff;
+$background-color: #808080;
+$font-color: #fff;
+$current-player-color: #000;
+$marker-color: #79687f;
+
+
 
 body {
-  text-align: center;
-  font-size: 16px;
+  background: linear-gradient(to bottom right, $body-background-color-left, $body-background-color-right);
+  background-attachment: fixed;
   font-family: 'Rubik', sans-serif;
-  background: linear-gradient(to bottom right, #ffb3ff, #b3ffff);
+  font-size: 16px;
   height: 100%;
   margin: 0;
-  background-attachment: fixed;
+  text-align: center;
 }
 
 .navbar-custom {
-  background-color: grey;
+  background-color: $background-color;
 }
 
 .navbar-brand {
-  color: white;
+  color: $font-color;
   font-family: 'Rubik', sans-serif;
 }
 
 .dropdown-toggle {
-  color: white;
+  color: $font-color;
   font-family: 'Rubik', sans-serif;
 }
 
 .sign-up-button {
-  padding: 0;
-  border: none;
   background: none;
+  border: 0;
   font-family: 'Rubik', sans-serif;
+  padding: 0;
 }
 
 .sign-in-button {
-  padding: 0;
-  border: none;
   background: none;
+  border: 0;
   font-family: 'Rubik', sans-serif;
+  padding: 0;
 }
 
 .change-password-button {
-  padding: 0;
-  border: none;
   background: none;
+  border: 0;
   font-family: 'Rubik', sans-serif;
+  padding: 0;
 }
 
-.sign-out {
+.sign-out-button {
+  background: none;
+  border: 0;
   font-family: 'Rubik', sans-serif;
+  padding: 0;
 }
 
 table {
-  margin-left:auto;
-  margin-right:auto;
-  width: 551px;
+  margin-left: auto;
+  margin-right: auto;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
+  width: 551px;
 }
 
 td {
-  height: 175px;
-  width: 175px;
-  text-align: center;
-  font-size: 120px;
-  border: 2px solid grey;
+  border: 2px solid $background-color;
   -webkit-border-radius: 10px;
+  font-size: 120px;
+  height: 175px;
+  text-align: center;
+  width: 175px;
 }
 
-#players {
-  margin-left:auto;
-  margin-right:auto;
+.players {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 20px;
-  padding: 20px 10px 10px 10px;
-  width: 511px;
+  padding: 20px 10px 10px;
   text-align: left;
-}
+  width: 511px;
 
-#players > div {
-  display: inline-block;
-  padding-right: 25px;
-  color: grey;
-  font-family: 'Rubik', sans-serif;
+  div {
+    color: $background-color;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    padding-right: 25px;
+    }
 }
 
 .button-custom {
+  color: $current-player-color;
   float: right;
-  color: black;
   font-family: 'Rubik', sans-serif;
 }
 
-.current-player {
-  color: black !important;
-  -webkit-transform: scale(1.5);
+// .current-player {
+//   color: $current-player-color;
+//   font-family: 'Rubik', sans-serif;
+//   -webkit-transform: scale(1.5);
+// }
+
+.x {
+  color: $marker-color;
   font-family: 'Rubik', sans-serif;
 }
 
-.X-marker {
-  color: #79687F;
-  font-family: 'Rubik', sans-serif;
-}
 
-
-.O-marker {
-  color: #79687F;
+.o {
+  color: $marker-color;
   font-family: 'Rubik', sans-serif;
 }
