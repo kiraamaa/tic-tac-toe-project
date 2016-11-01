@@ -1,26 +1,32 @@
 'use strict';
 
-const store = require('../store.js');
+const app = require ('./app');
 
 const success = (data) => {
-  $('#messages').text('success');
   console.log(data);
 };
 
 const signInSuccess = (data) => {
-  store.user = data.user;
-  success(data);
-  console.log(data);
+  app.user = data.user;
 };
 
 const failure = (error) => {
-  $('#messages').text('fail');
   console.error(error);
 };
 
+const changePassword = () => {
+  console.log ('Password changed');
+};
+
+const signOutSuccess = () => {
+  app.user = null;
+  console.log ('Signed out');
+};
 
 module.exports = {
   failure,
   success,
   signInSuccess,
+  changePassword,
+  signOutSuccess
 };
