@@ -1,8 +1,11 @@
 'use strict';
 
 const glob = require('./global.js');
-// const api = require('./api');
-// const ui = require('./ui');
+const api = require('./api');
+const ui = require('./ui');
+
+
+// begin game logic functions
 
 const checkWins = function () {
   let board = glob.vars.board;
@@ -78,30 +81,46 @@ const boardMarker = function (event) {
   }
 };
 
-// const changeColor1 = function () {
-//     document.getElementById("X").className = "black";
-//     document.getElementById("O").className = "";
-// };
-//
-// const changeColor2 = function () {
-//     document.getElementById("X").className = "";
-//     document.getElementById("O").className = "black";
-//
-// };
-//
-// const init = function () {
-//     document.getElementById("X").onclick = changeColor1;
-//     document.getElementById("O").onclick = changeColor2;
-// };
-//
-// window.onload = init();
+// end game logic functions
+
+// begin api events
+
+const onCreateGame = function (event) {
+  event.preventDefault();
+  api.createGame()
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
+const onGetAllGames = function (event) {
+  event.preventDefault();
+  api.getAllGame()
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
+const onfindGame = function (event) {
+  event.preventDefault();
+  api.findGame()
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
+const onJoinGame = function (event) {
+  event.preventDefault();
+  api.joinGame()
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
+const onUpdateWins = function (events) {
+  event.preventDefault();
+  api.updateWins(data)
+    .then(ui.success)
+    .catch(ui.failure);
+};
 
 
-
-//   if ((glob.vars.turnCount === 9) && (checkWins() === false)) {
-//     console.log('Tied!')
-//   }
-// };
 
 
 const addHandlers = () => {
