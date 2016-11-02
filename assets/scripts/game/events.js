@@ -1,8 +1,20 @@
 'use strict';
 
-const glob = require('./global');
+const glob = require('./global.js');
 // const api = require('./api');
 // const ui = require('./ui');
+
+const checkHorizontalWin = function () {
+  let board = glob.vars.board;
+
+  if (board[0] && (board[0] === board[1]) && (board[0] === board[2])) {
+    console.log(board[0] + ' wins');
+  } else if (board[3] && (board[3] === board[4]) && (board[3] === board[5])) {
+    console.log(board[3] + ' wins');
+  } else if (board[6] && (board[6] === board[7]) && (board[6] === board[8])) {
+    console.log(board[6] + ' wins');
+  }
+};
 
 const boardMarker = function (event) {
   event.preventDefault();
@@ -22,10 +34,14 @@ const boardMarker = function (event) {
       glob.vars.board[i] = "o";
     }
 
+    checkHorizontalWin();
+
     glob.vars.xTurn = !glob.vars.xTurn;
     console.log(glob.vars.board);
   }
 };
+
+
 
 
 
