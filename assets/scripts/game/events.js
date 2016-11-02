@@ -1,8 +1,8 @@
 'use strict';
 
 const glob = require('./global.js');
-const api = require('./api');
-const ui = require('./ui');
+// const api = require('./api');
+// const ui = require('./ui');
 
 
 // begin game logic functions
@@ -43,6 +43,7 @@ const checkWins = function () {
     console.log(board[2] + ' wins');
     tieGame = true;
   }
+  return tieGame;
 };
 
 
@@ -50,10 +51,11 @@ const boardMarker = function (event) {
   event.preventDefault();
   let tile = $(this).attr('class');
   let tileClass = '.' + tile;
-  let i = +(tile.replace(/\D/g,'')); // convert tile class to integer for index on board
+  // convert tile class to integer for index on board
+  let i = +(tile.replace(/\D/g,''));
 
-
-  if (!glob.vars.board[i]) { // if board hasn't been clicked
+  // runs if board has not been clicked
+  if (!glob.vars.board[i]) {
 
     if (glob.vars.xTurn) {
       $(tileClass).html("X");
@@ -72,9 +74,13 @@ const boardMarker = function (event) {
     }
   }
 
+  // shows tied game
   if (!checkWins()) {
+    // counts number of total turns
     glob.vars.turnCount++;
-    glob.vars.xTurn = !glob.vars.xTurn; // change from X to O
+    // change from X to O turn
+    glob.vars.xTurn = !glob.vars.xTurn;
+
     if (glob.vars.turnCount === 9) {
         console.log('tie game');
     }
@@ -82,6 +88,8 @@ const boardMarker = function (event) {
 };
 
 // end game logic functions
+
+
 
 // begin api events
 
@@ -113,13 +121,12 @@ const onJoinGame = function (event) {
     .catch(ui.failure);
 };
 
-const onUpdateWins = function (events) {
+const onUpdateWins = function (event) {
   event.preventDefault();
   api.updateWins(data)
     .then(ui.success)
     .catch(ui.failure);
 };
-
 
 
 
