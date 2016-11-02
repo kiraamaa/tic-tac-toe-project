@@ -20,31 +20,32 @@ const boardMarker = function () {
   let tile = $(this).attr('class');
   let tileClass = '.' + tile;
 
-  if (glob.vars.xTurn) {
+  let i = +(tile.replace(/\D/g,''));
+  console.log('clicked tile ' + i);
+  // console.table(glob.vars.board);
 
+  if (glob.vars.xTurn) {
     $(tileClass).html("X");
-    glob.vars.board = "x";
+    glob.vars.board[i] = "x";
   } else {
     $(tileClass).html("O");
-    glob.vars.board = "o";
+    glob.vars.board[i] = "o";
   }
 
   glob.vars.xTurn = !glob.vars.xTurn;
-
-  console.log('Whose turn ' + glob.vars.xTurn);
 };
 
 
 const addHandlers = () => {
-  $('.tileZero').on('click', boardMarker);
-  $('.tileOne').on('click', boardMarker);
-  $('.tileTwo').on('click', boardMarker);
-  $('.tileThree').on('click', boardMarker);
-  $('.tileFour').on('click', boardMarker);
-  $('.tileFive').on('click', boardMarker);
-  $('.tileSix').on('click', boardMarker);
-  $('.tileSeven').on('click', boardMarker);
-  $('.tileEight').on('click', boardMarker);
+  $('.tile0').on('click', boardMarker);
+  $('.tile1').on('click', boardMarker);
+  $('.tile2').on('click', boardMarker);
+  $('.tile3').on('click', boardMarker);
+  $('.tile4').on('click', boardMarker);
+  $('.tile5').on('click', boardMarker);
+  $('.tile6').on('click', boardMarker);
+  $('.tile7').on('click', boardMarker);
+  $('.tile8').on('click', boardMarker);
 };
 
 module.exports = {

@@ -2,7 +2,7 @@
 
 const vars = {
   xTurn: true,
-  board: [],
+  board: ['', '', '', '', '', '', '', '', ''],
 };
 
 
