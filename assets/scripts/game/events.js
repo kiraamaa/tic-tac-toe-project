@@ -4,9 +4,10 @@ const glob = require('./global.js');
 // const api = require('./api');
 // const ui = require('./ui');
 
-const checkHorizontalWin = function () {
+const checkWins = function () {
   let board = glob.vars.board;
 
+  // checks horizontal wins
   if (board[0] && (board[0] === board[1]) && (board[0] === board[2])) {
     console.log(board[0] + ' wins');
   } else if (board[3] && (board[3] === board[4]) && (board[3] === board[5])) {
@@ -14,7 +15,27 @@ const checkHorizontalWin = function () {
   } else if (board[6] && (board[6] === board[7]) && (board[6] === board[8])) {
     console.log(board[6] + ' wins');
   }
+
+  // checks vertical wins
+  if (board[0] && (board[0] === board[3]) && (board[0] === board[6])) {
+    console.log(board[0] + ' wins');
+  } else if (board[1] && (board[1] === board[4]) && (board[1] === board[7])) {
+    console.log(board[1] + ' wins');
+  } else if (board[2] && (board[2] === board[5]) && (board[2] === board[8])) {
+    console.log(board[2] + ' wins');
+  }
+
+  // checks horizontal wins
+  if (board[0] && (board[0] === board[4]) && (board[0] === board[8])) {
+    console.log(board[0] + ' wins');
+  } else if (board[2] && (board[2] === board[4]) && (board[2] === board[6])) {
+    console.log(board[2] + ' wins');
+  }
+
+
+
 };
+
 
 const boardMarker = function (event) {
   event.preventDefault();
@@ -22,7 +43,6 @@ const boardMarker = function (event) {
   let tileClass = '.' + tile;
 
   let i = +(tile.replace(/\D/g,'')); // convert tile class to integer for index on board
-  console.log('clicked tile ' + i);
 
   if (!glob.vars.board[i]) { // if board hasn't been clicked
 
@@ -34,7 +54,7 @@ const boardMarker = function (event) {
       glob.vars.board[i] = "o";
     }
 
-    checkHorizontalWin();
+    checkWins();
 
     glob.vars.xTurn = !glob.vars.xTurn;
     console.log(glob.vars.board);
