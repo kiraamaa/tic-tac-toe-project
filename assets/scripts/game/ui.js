@@ -1,12 +1,12 @@
 'use strict';
-
-const app = require ('../app');
-
-const success = (data) => {
-  console.log(data);
-};
-
-
-const failure = (error) => {
-  console.error(error);
-};
+//
+// const app = require ('../app');
+//
+// const success = (data) => {
+//   console.log(data);
+// };
+//
+//
+// const failure = (error) => {
+//   console.error(error);
+// };
