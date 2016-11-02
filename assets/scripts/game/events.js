@@ -15,7 +15,6 @@ const boardMarker = function (event) {
   if (!glob.vars.board[i]) { // if board hasn't been clicked
 
     if (glob.vars.xTurn) {
-
       $(tileClass).html("X");
       glob.vars.board[i] = "x";
     } else {
@@ -26,9 +25,8 @@ const boardMarker = function (event) {
     glob.vars.xTurn = !glob.vars.xTurn;
     console.log(glob.vars.board);
   }
-
-
 };
+
 
 
 
