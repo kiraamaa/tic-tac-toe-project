@@ -11,9 +11,6 @@ const onSignUp = function (event) {
     .then(ui.success)
     .catch(ui.failure);
   $('#myModal').modal("hide");
-  $.ajaxSetup({
-    cache: false
-});
 };
 
 const onSignIn = function (event) {
