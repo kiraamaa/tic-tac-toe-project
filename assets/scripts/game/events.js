@@ -1,16 +1,37 @@
 'use strict';
 
+const glob = require('./global');
 // const api = require('./api');
 // const ui = require('./ui');
 
-const boardMarker = function (cell) {
-  event.preventDefault();
 
+// const changePlayer = function () {
+//     if (player === 'X') {
+//       player = 'O';
+//     } else {
+//       player = 'X';
+//     }
+//     $('.players').text("Current player: " + player);
+// };
+
+
+const boardMarker = function () {
+  event.preventDefault();
   let tile = $(this).attr('class');
   let tileClass = '.' + tile;
 
-  console.log('Tile was clicked.');
-  $('.tileZero').html('X');
+  if (glob.vars.xTurn) {
+
+    $(tileClass).html("X");
+    glob.vars.board = "x";
+  } else {
+    $(tileClass).html("O");
+    glob.vars.board = "o";
+  }
+
+  glob.vars.xTurn = !glob.vars.xTurn;
+
+  console.log('Whose turn ' + glob.vars.xTurn);
 };
 
 
