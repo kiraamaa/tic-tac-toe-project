@@ -13,4 +13,5 @@ const gameEvents = require('./game/events.js');
 $(() => {
   authEvents.addHandlers();
   gameEvents.addHandlers();
+  $('.X').css("color", "black");
 });

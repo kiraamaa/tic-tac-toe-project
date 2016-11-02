@@ -49,13 +49,23 @@ const boardMarker = function (event) {
   let tileClass = '.' + tile;
   let i = +(tile.replace(/\D/g,'')); // convert tile class to integer for index on board
 
+
   if (!glob.vars.board[i]) { // if board hasn't been clicked
+
     if (glob.vars.xTurn) {
       $(tileClass).html("X");
+      $('.X').css("color", "black");
+      $('.O').css("color", "");
       glob.vars.board[i] = "x";
+      $('.X').css("color", "");
+      $('.O').css("color", "black");
     } else {
       $(tileClass).html("O");
+      $('.X').css("color", "");
+      $('.O').css("color", "black");
       glob.vars.board[i] = "o";
+      $('.X').css("color", "black");
+      $('.O').css("color", "");
     }
   }
 
@@ -67,6 +77,26 @@ const boardMarker = function (event) {
     }
   }
 };
+
+// const changeColor1 = function () {
+//     document.getElementById("X").className = "black";
+//     document.getElementById("O").className = "";
+// };
+//
+// const changeColor2 = function () {
+//     document.getElementById("X").className = "";
+//     document.getElementById("O").className = "black";
+//
+// };
+//
+// const init = function () {
+//     document.getElementById("X").onclick = changeColor1;
+//     document.getElementById("O").onclick = changeColor2;
+// };
+//
+// window.onload = init();
+
+
 
 //   if ((glob.vars.turnCount === 9) && (checkWins() === false)) {
 //     console.log('Tied!')
