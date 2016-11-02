@@ -53,6 +53,8 @@
 //
 // module.exports = {
 //   createGame,
-//   updateWins,
 //   getAllGames
+//   findGame,
+//   joinGame,
+//   updateWins,
 // };

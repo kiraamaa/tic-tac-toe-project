@@ -1,8 +1,8 @@
 'use strict';
 
 const glob = require('./global.js');
-// const api = require('./api');
-// const ui = require('./ui');
+const api = require('./api');
+const ui = require('./ui');
 
 
 // begin game logic functions
@@ -97,6 +97,32 @@ const boardMarker = function (event) {
   }
 };
 
+const clearBoard = function () {
+  glob.vars.board = [];
+  glob.vars.turnCount = 0;
+  glob.vars.xTurn = true;
+
+  $('.tile0').html('');
+  $('.tile1').html('');
+  $('.tile2').html('');
+  $('.tile3').html('');
+  $('.tile4').html('');
+  $('.tile5').html('');
+  $('.tile6').html('');
+  $('.tile7').html('');
+  $('.tile8').html('');
+
+  $('.tile0').on('click', boardMarker);
+  $('.tile1').on('click', boardMarker);
+  $('.tile2').on('click', boardMarker);
+  $('.tile3').on('click', boardMarker);
+  $('.tile4').on('click', boardMarker);
+  $('.tile5').on('click', boardMarker);
+  $('.tile6').on('click', boardMarker);
+  $('.tile7').on('click', boardMarker);
+  $('.tile8').on('click', boardMarker);
+};
+
 // end game logic functions
 
 
@@ -138,6 +164,8 @@ const onUpdateWins = function (event) {
     .catch(ui.failure);
 };
 
+// end api events
+
 
 
 const addHandlers = () => {
@@ -150,6 +178,7 @@ const addHandlers = () => {
   $('.tile6').on('click', boardMarker);
   $('.tile7').on('click', boardMarker);
   $('.tile8').on('click', boardMarker);
+  $('.button-custom').on('click', clearBoard);
 };
 
 module.exports = {
