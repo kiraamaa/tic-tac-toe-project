@@ -3,7 +3,7 @@
 const glob = require('./global.js');
 const api = require('./api.js');
 const ui = require('./ui.js');
-const app = require('../app.js');
+// const app = require('../app.js');
 
 
 // begin api events
@@ -15,12 +15,11 @@ const onCreateGame = function (event) {
     .catch(ui.failure);
 };
 
-// const onGetAllGames = function (event) {
-//   event.preventDefault();
-//   api.getAllGame()
-//     .then(ui.success)
-//     .catch(ui.failure);
-// };
+const onGetAllGames = function () {
+  api.getAllGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.failure);
+};
 
 const onUpdateGame = function () {
   let data = {
@@ -133,10 +132,7 @@ const boardMarker = function (event) {
     $('.tile7').css('pointer-events', 'none');
     $('.tile8').css('pointer-events', 'none');
 
-  }
-
-  // shows tied game
-  if (glob.vars.turnCount === 9) {
+  } else if (glob.vars.turnCount === 9) {
       console.log('tie game');
       glob.vars.gameOver = true;
   }
@@ -235,6 +231,7 @@ const addHandlers = () => {
   $('.button-custom').on('click', onCreateGame);
   // clears board using new game button
   $('.button-custom').on('click', clearBoard);
+  $('.grab-stats').on('click', onGetAllGames);
 
 };
 

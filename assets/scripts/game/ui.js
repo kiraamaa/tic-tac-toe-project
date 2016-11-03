@@ -5,7 +5,13 @@ const app = require ('../app');
 const success = (data) => {
   app.game = data.game;
   console.log(data);
-  console.log("create game in ui");
+  console.log("update game");
+};
+
+const getGamesSuccess = (data) => {
+  // app.game = data.game;
+  console.log(data);
+  console.log("get game in uiakjdhkjahd");
 };
 
 const updateGameSuccess = (data) => {
@@ -23,4 +29,5 @@ module.exports = {
   failure,
   success,
   updateGameSuccess,
+  getGamesSuccess,
 };

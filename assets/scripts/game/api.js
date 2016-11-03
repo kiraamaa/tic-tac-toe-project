@@ -14,13 +14,14 @@ const createGame = () =>
     game: {},
   });
 
-const getAllGames = () =>
+const getAllGames = (player_x) =>
   $.ajax({
     url: app.host + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
-    }
+    },
+    player_x,
   });
 
 const updateGame = (data) =>
