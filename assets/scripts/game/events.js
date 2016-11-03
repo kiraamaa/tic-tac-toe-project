@@ -129,15 +129,15 @@ const clearBoard = function () {
   // $('.tile7').on('click');
   // $('.tile8').on('click');
 
-    // $('.tile0').on('click', boardMarker);
-    // $('.tile1').on('click', boardMarker);
-    // $('.tile2').on('click', boardMarker);
-    // $('.tile3').on('click', boardMarker);
-    // $('.tile4').on('click', boardMarker);
-    // $('.tile5').on('click', boardMarker);
-    // $('.tile6').on('click', boardMarker);
-    // $('.tile7').on('click', boardMarker);
-    // $('.tile8').on('click', boardMarker);
+  // $('.tile0').on('click', boardMarker);
+  // $('.tile1').on('click', boardMarker);
+  // $('.tile2').on('click', boardMarker);
+  // $('.tile3').on('click', boardMarker);
+  // $('.tile4').on('click', boardMarker);
+  // $('.tile5').on('click', boardMarker);
+  // $('.tile6').on('click', boardMarker);
+  // $('.tile7').on('click', boardMarker);
+  // $('.tile8').on('click', boardMarker);
 
 
   $('.tile0').css('pointer-events', 'auto');
