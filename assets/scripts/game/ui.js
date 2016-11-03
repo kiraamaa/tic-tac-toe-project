@@ -1,13 +1,16 @@
-// 'use strict';
-//
-// const app = require('../app');
-// const logic = require('./logic');
-// const api = require('./api');
-//
-// const success = (data) => {
-//   console.log(data);
-// };
-//
-// const failure = (error) => {
-//   console.error(error);
-// };
+'use strict';
+
+const app = require ('../app');
+
+const success = (data) => {
+  console.log(data);
+};
+
+const failure = (error) => {
+  console.error(error);
+};
+
+module.exports = {
+  failure,
+  success,
+};

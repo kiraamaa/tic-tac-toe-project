@@ -1,8 +1,11 @@
 'use strict';
 
 const app = {
-  host: 'https://aqueous-atoll-85096.herokuapp.com'
+
 };
 
 
-module.exports = app;
+module.exports = {
+  app,
+  host: 'https://aqueous-atoll-85096.herokuapp.com',
+};
