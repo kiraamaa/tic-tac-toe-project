@@ -8,6 +8,13 @@ const success = (data) => {
   console.log("create game in ui");
 };
 
+const updateGameSuccess = (data) => {
+  app.game = data.game;
+  console.log(data);
+  console.log("update game in ui");
+};
+
+
 const failure = (error) => {
   console.error(error);
 };
@@ -15,4 +22,5 @@ const failure = (error) => {
 module.exports = {
   failure,
   success,
+  updateGameSuccess,
 };

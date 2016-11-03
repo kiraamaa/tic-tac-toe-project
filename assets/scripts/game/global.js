@@ -5,6 +5,8 @@ const vars = {
   xTurn: true,
   board: ['', '', '', '', '', '', '', '', ''],
   gameOver: false,
+  latestIndex: 0,
+  latestMove: '',
 };
 
 

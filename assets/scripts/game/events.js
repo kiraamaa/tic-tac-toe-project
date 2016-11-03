@@ -3,6 +3,41 @@
 const glob = require('./global.js');
 const api = require('./api.js');
 const ui = require('./ui.js');
+const app = require('../app.js');
+
+
+// begin api events
+
+const onCreateGame = function (event) {
+  event.preventDefault();
+  api.createGame()
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
+// const onGetAllGames = function (event) {
+//   event.preventDefault();
+//   api.getAllGame()
+//     .then(ui.success)
+//     .catch(ui.failure);
+// };
+
+const onUpdateGame = function () {
+  let data = {
+    "game": {
+      "cell": {
+        "index": glob.vars.latestIndex,
+        "value": glob.vars.latestMove,
+      },
+      "over": glob.vars.gameOver,
+    },
+  };
+  api.updateGame(data)
+    .then(ui.updateGameSuccess)
+    .catch(ui.failure);
+};
+
+// end api events
 
 
 // begin game logic functions
@@ -54,13 +89,19 @@ const boardMarker = function (event) {
   // convert tile class to integer for index on board
   let i = +(tile.replace(/\D/g,''));
 
+  glob.vars.latestIndex = i;
+
   // runs if board has not been clicked
   if (!glob.vars.board[i]) {
     if (glob.vars.xTurn) {
       $(tileClass).html("X");
+      // shows player X begins
       $('.X').css("color", "black");
       $('.O').css("color", "");
       glob.vars.board[i] = "x";
+      glob.vars.latestMove = "x";
+      onUpdateGame();
+      // shows player O turn begins once player X plays
       $('.X').css("color", "");
       $('.O').css("color", "black");
     } else {
@@ -68,12 +109,16 @@ const boardMarker = function (event) {
       $('.X').css("color", "");
       $('.O').css("color", "black");
       glob.vars.board[i] = "o";
+      glob.vars.latestMove = "o";
+      onUpdateGame();
       $('.X').css("color", "black");
       $('.O').css("color", "");
     }
+
     glob.vars.xTurn = !glob.vars.xTurn;
     glob.vars.turnCount++;
   }
+
 
   if (checkWins()) {
 
@@ -97,6 +142,7 @@ const boardMarker = function (event) {
   }
 };
 
+// clears board after winning or quitting
 const clearBoard = function () {
   glob.vars.board = [];
   glob.vars.turnCount = 0;
@@ -155,49 +201,12 @@ const clearBoard = function () {
 
 
 
-// begin api events
 
-const onCreateGame = function (event) {
-  event.preventDefault();
-  api.createGame()
-    .then(ui.success)
-    .catch(ui.failure);
-    console.log("created game");
-};
-
-const onGetAllGames = function (event) {
-  event.preventDefault();
-  api.getAllGame()
-    .then(ui.success)
-    .catch(ui.failure);
-};
-
-const onfindGame = function (event) {
-  event.preventDefault();
-  api.findGame()
-    .then(ui.success)
-    .catch(ui.failure);
-};
-
-const onJoinGame = function (event) {
-  event.preventDefault();
-  api.joinGame()
-    .then(ui.success)
-    .catch(ui.failure);
-};
-
-const onUpdateWins = function (event) {
-  event.preventDefault();
-  api.updateWins(data)
-    .then(ui.success)
-    .catch(ui.failure);
-};
-
-// end api events
 
 
 
 const addHandlers = () => {
+  // turns off click capability on page load
   $('.tile0').css('pointer-events', 'none');
   $('.tile1').css('pointer-events', 'none');
   $('.tile2').css('pointer-events', 'none');
@@ -208,6 +217,7 @@ const addHandlers = () => {
   $('.tile7').css('pointer-events', 'none');
   $('.tile8').css('pointer-events', 'none');
 
+  // turns on click capability once logged in
   $('.tile0').on('click', boardMarker);
   $('.tile1').on('click', boardMarker);
   $('.tile2').on('click', boardMarker);
@@ -218,7 +228,12 @@ const addHandlers = () => {
   $('.tile7').on('click', boardMarker);
   $('.tile8').on('click', boardMarker);
 
+
+  // $('.signInAlert').show();
+
+  // creates new game using new game button
   $('.button-custom').on('click', onCreateGame);
+  // clears board using new game button
   $('.button-custom').on('click', clearBoard);
 
 };

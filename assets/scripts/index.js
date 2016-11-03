@@ -15,4 +15,5 @@ $(() => {
   authEvents.addHandlers();
   gameEvents.addHandlers();
   $('.X').css("color", "black");
+  $('.signInAlert').hide();
 });
