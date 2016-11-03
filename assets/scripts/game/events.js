@@ -1,8 +1,8 @@
 'use strict';
 
 const glob = require('./global.js');
-const api = require('./api');
-const ui = require('./ui');
+// const api = require('./api');
+// const ui = require('./ui');
 
 
 // begin game logic functions
@@ -56,7 +56,6 @@ const boardMarker = function (event) {
 
   // runs if board has not been clicked
   if (!glob.vars.board[i]) {
-
     if (glob.vars.xTurn) {
       $(tileClass).html("X");
       $('.X').css("color", "black");
@@ -72,39 +71,29 @@ const boardMarker = function (event) {
       $('.X').css("color", "black");
       $('.O').css("color", "");
     }
+    glob.vars.xTurn = !glob.vars.xTurn;
+    glob.vars.turnCount++;
+  }
+
+  if (checkWins()) {
+
+    // turns off clicks after winning
+    $('.tile0').css('pointer-events', 'none');
+    $('.tile1').css('pointer-events', 'none');
+    $('.tile2').css('pointer-events', 'none');
+    $('.tile3').css('pointer-events', 'none');
+    $('.tile4').css('pointer-events', 'none');
+    $('.tile5').css('pointer-events', 'none');
+    $('.tile6').css('pointer-events', 'none');
+    $('.tile7').css('pointer-events', 'none');
+    $('.tile8').css('pointer-events', 'none');
+
   }
 
   // shows tied game
-  if (!checkWins()) {
-    // counts number of total turns
-    glob.vars.turnCount++;
-    // change from X to O turn
-    glob.vars.xTurn = !glob.vars.xTurn;
-
-    if (glob.vars.turnCount === 9) {
-        console.log('tie game');
-    }
-    } else {
-      // $('.tile0').off('click');
-      // $('.tile1').off('click');
-      // $('.tile2').off('click');
-      // $('.tile3').off('click');
-      // $('.tile4').off('click');
-      // $('.tile5').off('click');
-      // $('.tile6').off('click');
-      // $('.tile7').off('click');
-      // $('.tile8').off('click');
-
-      $('.tile0').css('pointer-events', 'none');
-      $('.tile1').css('pointer-events', 'none');
-      $('.tile2').css('pointer-events', 'none');
-      $('.tile3').css('pointer-events', 'none');
-      $('.tile4').css('pointer-events', 'none');
-      $('.tile5').css('pointer-events', 'none');
-      $('.tile6').css('pointer-events', 'none');
-      $('.tile7').css('pointer-events', 'none');
-      $('.tile8').css('pointer-events', 'none');
-
+  if (glob.vars.turnCount === 9) {
+      console.log('tie game');
+      glob.vars.gameOver = true;
   }
 };
 
@@ -140,15 +129,26 @@ const clearBoard = function () {
   // $('.tile7').on('click');
   // $('.tile8').on('click');
 
-    $('.tile0').css('pointer-events', 'auto');
-    $('.tile1').css('pointer-events', 'auto');
-    $('.tile2').css('pointer-events', 'auto');
-    $('.tile3').css('pointer-events', 'auto');
-    $('.tile4').css('pointer-events', 'auto');
-    $('.tile5').css('pointer-events', 'auto');
-    $('.tile6').css('pointer-events', 'auto');
-    $('.tile7').css('pointer-events', 'auto');
-    $('.tile8').css('pointer-events', 'auto');
+    // $('.tile0').on('click', boardMarker);
+    // $('.tile1').on('click', boardMarker);
+    // $('.tile2').on('click', boardMarker);
+    // $('.tile3').on('click', boardMarker);
+    // $('.tile4').on('click', boardMarker);
+    // $('.tile5').on('click', boardMarker);
+    // $('.tile6').on('click', boardMarker);
+    // $('.tile7').on('click', boardMarker);
+    // $('.tile8').on('click', boardMarker);
+
+
+  $('.tile0').css('pointer-events', 'auto');
+  $('.tile1').css('pointer-events', 'auto');
+  $('.tile2').css('pointer-events', 'auto');
+  $('.tile3').css('pointer-events', 'auto');
+  $('.tile4').css('pointer-events', 'auto');
+  $('.tile5').css('pointer-events', 'auto');
+  $('.tile6').css('pointer-events', 'auto');
+  $('.tile7').css('pointer-events', 'auto');
+  $('.tile8').css('pointer-events', 'auto');
 };
 
 // end game logic functions
@@ -197,6 +197,16 @@ const onUpdateWins = function (event) {
 
 
 const addHandlers = () => {
+  $('.tile0').css('pointer-events', 'none');
+  $('.tile1').css('pointer-events', 'none');
+  $('.tile2').css('pointer-events', 'none');
+  $('.tile3').css('pointer-events', 'none');
+  $('.tile4').css('pointer-events', 'none');
+  $('.tile5').css('pointer-events', 'none');
+  $('.tile6').css('pointer-events', 'none');
+  $('.tile7').css('pointer-events', 'none');
+  $('.tile8').css('pointer-events', 'none');
+
   $('.tile0').on('click', boardMarker);
   $('.tile1').on('click', boardMarker);
   $('.tile2').on('click', boardMarker);
