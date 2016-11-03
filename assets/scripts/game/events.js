@@ -96,6 +96,15 @@ const boardMarker = function (event) {
       // $('.tile8').off('click');
 
       $('.tile0').css('pointer-events', 'none');
+      $('.tile1').css('pointer-events', 'none');
+      $('.tile2').css('pointer-events', 'none');
+      $('.tile3').css('pointer-events', 'none');
+      $('.tile4').css('pointer-events', 'none');
+      $('.tile5').css('pointer-events', 'none');
+      $('.tile6').css('pointer-events', 'none');
+      $('.tile7').css('pointer-events', 'none');
+      $('.tile8').css('pointer-events', 'none');
+
   }
 };
 
@@ -104,6 +113,8 @@ const clearBoard = function () {
   glob.vars.turnCount = 0;
   glob.vars.xTurn = true;
   glob.vars.gameOver = false;
+  $('.X').css("color", "black");
+  $('.O').css("color", "");
 
   // clears tiles
   $('.tile0').html('');
@@ -130,6 +141,14 @@ const clearBoard = function () {
   // $('.tile8').on('click');
 
     $('.tile0').css('pointer-events', 'auto');
+    $('.tile1').css('pointer-events', 'auto');
+    $('.tile2').css('pointer-events', 'auto');
+    $('.tile3').css('pointer-events', 'auto');
+    $('.tile4').css('pointer-events', 'auto');
+    $('.tile5').css('pointer-events', 'auto');
+    $('.tile6').css('pointer-events', 'auto');
+    $('.tile7').css('pointer-events', 'auto');
+    $('.tile8').css('pointer-events', 'auto');
 };
 
 // end game logic functions
