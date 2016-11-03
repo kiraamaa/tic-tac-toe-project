@@ -7,6 +7,7 @@ const success = (data) => {
 };
 
 const signInSuccess = (data) => {
+  console.log(data);
   app.user = data.user;
 };
 

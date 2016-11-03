@@ -12,36 +12,20 @@ const createGame = () => {
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
+    game: {},
   });
 
-const getAllGames = () =>
+const getAllGames = (player_x) =>
   $.ajax({
     url: app.host + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
-    }
-  });
-
-const findGame = () =>
-  $.ajax({
-    url: app.host + '/games/' + app.user.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    }
-  });
-
-const joinGame = () =>
-  $.ajax({
-    url: app.host + '/games/' + app.game.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
     },
+    player_x,
   });
 
-const updateWins = (data) =>
+const updateGame = (data) =>
   $.ajax({
     url: app.host + '/games/' + app.game.id,
     method: 'PATCH',
@@ -54,8 +38,6 @@ const updateWins = (data) =>
 
 module.exports = {
   createGame,
-  getAllGames
-  findGame,
-  joinGame,
-  updateWins,
+  getAllGames,
+  updateGame,
 };

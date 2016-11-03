@@ -53,11 +53,18 @@
                       </button>
                     </a>
                   </li>
-                  <li role="separator" class="divider"></li>
                   <li>
                     <a>
                       <button type="button" class="sign-out-button">
                         Sign out
+                      </button>
+                    </a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a>
+                      <button type="button" class="get-stats-button" data-toggle="modal" data-target="#myModal4">
+                        Get stats
                       </button>
                     </a>
                   </li>
@@ -71,6 +78,9 @@
 
 
 <!--Game board-->
+<div class="win-message"></div>
+<div class="stats-message"></div>
+
   <div class="players">
     <div class="X">Player X</div>
     <div class="O">Player O</div>
@@ -94,6 +104,10 @@
       <td class="tile8"></td>
     </tr>
   </table>
+
+
+
+
 
 <!-- Sign up modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -170,6 +184,9 @@
     </div>
   </div>
 </div>
+
+
+
 
 </body>
 </html>
