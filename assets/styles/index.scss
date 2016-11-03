@@ -62,7 +62,7 @@ body {
   padding: 0;
 }
 
-.button-stats {
+.get-stats-button {
   background: none;
   border: 0;
   font-family: 'Rubik', sans-serif;
@@ -70,6 +70,7 @@ body {
 }
 
 table {
+  color: $font-color;
   margin-left: auto;
   margin-right: auto;
   -moz-user-select: none;
@@ -79,7 +80,7 @@ table {
 }
 
 td {
-  border: 2px solid $background-color;
+  border: 2px solid $font-color;
   -webkit-border-radius: 10px;
   color: $font-color;
   font-size: 120px;
@@ -97,7 +98,7 @@ td {
   width: 511px;
 
   div {
-    color: $background-color;
+    color: $current-player-color;
     display: inline-block;
     font-family: 'Rubik', sans-serif;
     padding-right: 25px;
@@ -111,31 +112,29 @@ td {
 }
 
 .current-player {
-  color: $font-color;
+  color: $current-player-color;
   font-family: 'Rubik', sans-serif;
-  -webkit-transform: scale(1.5);
 }
 
 .x {
-  color: $font-color;
+  color: $current-player-color;
   font-family: 'Rubik', sans-serif;
 }
 
 
 .o {
-  color: $font-color;
+  color: $current-player-color;
   font-family: 'Rubik', sans-serif;
 }
 
 .stats-message {
-  position: relative;
   float: right;
-  top: 20px;
+  position: relative;
   right: 400px;
+  top: 20px;
 }
 
 .win-message {
-  position: relative;
   float: right;
-
+  position: relative;
 }

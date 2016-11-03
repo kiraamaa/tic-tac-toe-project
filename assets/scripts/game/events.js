@@ -103,22 +103,22 @@ const boardMarker = function (event) {
     if (glob.vars.xTurn) {
       $(tileClass).html("X");
       // shows player X begins
-      $('.X').css("color", "black");
+      $('.X').css("color", "white");
       $('.O').css("color", "");
       glob.vars.board[i] = "x";
       glob.vars.latestMove = "x";
       onUpdateGame();
       // shows player O turn begins once player X plays
       $('.X').css("color", "");
-      $('.O').css("color", "black");
+      $('.O').css("color", "white");
     } else {
       $(tileClass).html("O");
       $('.X').css("color", "");
-      $('.O').css("color", "black");
+      $('.O').css("color", "white");
       glob.vars.board[i] = "o";
       glob.vars.latestMove = "o";
       onUpdateGame();
-      $('.X').css("color", "black");
+      $('.X').css("color", "white");
       $('.O').css("color", "");
     }
 
@@ -153,7 +153,7 @@ const clearBoard = function () {
   glob.vars.turnCount = 0;
   glob.vars.xTurn = true;
   glob.vars.gameOver = false;
-  $('.X').css("color", "black");
+  $('.X').css("color", "white");
   $('.O').css("color", "");
   $('.win-message').text('');
 
