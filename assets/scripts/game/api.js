@@ -11,6 +11,7 @@ const createGame = () =>
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
+    game: {},
   });
 
 const getAllGames = () =>
@@ -53,7 +54,7 @@ const updateWins = (data) =>
 
 module.exports = {
   createGame,
-  getAllGames
+  getAllGames,
   findGame,
   joinGame,
   updateWins,

@@ -1,8 +1,8 @@
 'use strict';
 
 const glob = require('./global.js');
-// const api = require('./api');
-// const ui = require('./ui');
+const api = require('./api.js');
+const ui = require('./ui.js');
 
 
 // begin game logic functions
@@ -162,6 +162,7 @@ const onCreateGame = function (event) {
   api.createGame()
     .then(ui.success)
     .catch(ui.failure);
+    console.log("created game");
 };
 
 const onGetAllGames = function (event) {
@@ -216,7 +217,9 @@ const addHandlers = () => {
   $('.tile6').on('click', boardMarker);
   $('.tile7').on('click', boardMarker);
   $('.tile8').on('click', boardMarker);
+
   $('.button-custom').on('click', clearBoard);
+  $('.button-custom').on('click', onCreateGame);
 };
 
 module.exports = {
