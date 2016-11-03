@@ -52,30 +52,37 @@ const checkWins = function () {
     gameOver = true;
   } else if (board[3] && (board[3] === board[4]) && (board[3] === board[5])) {
     console.log(board[3] + ' wins');
+    $('.win-message').text(board[3] + ' wins');
     gameOver = true;
   } else if (board[6] && (board[6] === board[7]) && (board[6] === board[8])) {
     console.log(board[6] + ' wins');
+    $('.win-message').text(board[6] + ' wins');
     gameOver = true;
   }
 
   // checks vertical wins
   if (board[0] && (board[0] === board[3]) && (board[0] === board[6])) {
     console.log(board[0] + ' wins');
+    $('.win-message').text(board[0] + ' wins');
     gameOver = true;
   } else if (board[1] && (board[1] === board[4]) && (board[1] === board[7])) {
     console.log(board[1] + ' wins');
+    $('.win-message').text(board[1] + ' wins');
     gameOver = true;
   } else if (board[2] && (board[2] === board[5]) && (board[2] === board[8])) {
     console.log(board[2] + ' wins');
+    $('.win-message').text(board[2] + ' wins');
     gameOver = true;
   }
 
   // checks diagonal wins
   if (board[0] && (board[0] === board[4]) && (board[0] === board[8])) {
     console.log(board[0] + ' wins');
+    $('.win-message').text(board[0] + ' wins');
     gameOver = true;
   } else if (board[2] && (board[2] === board[4]) && (board[2] === board[6])) {
     console.log(board[2] + ' wins');
+    $('.win-message').text(board[2] + ' wins');
     gameOver = true;
   }
   return gameOver;
@@ -135,6 +142,7 @@ const boardMarker = function (event) {
 
   } else if (glob.vars.turnCount === 9) {
       console.log('tie game');
+      $('.win-message').text("It's a tie");
       glob.vars.gameOver = true;
   }
 };
@@ -147,6 +155,7 @@ const clearBoard = function () {
   glob.vars.gameOver = false;
   $('.X').css("color", "black");
   $('.O').css("color", "");
+  $('.win-message').text('');
 
   // clears tiles
   $('.tile0').html('');
