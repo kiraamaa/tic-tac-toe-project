@@ -218,8 +218,9 @@ const addHandlers = () => {
   $('.tile7').on('click', boardMarker);
   $('.tile8').on('click', boardMarker);
 
-  $('.button-custom').on('click', clearBoard);
   $('.button-custom').on('click', onCreateGame);
+  $('.button-custom').on('click', clearBoard);
+
 };
 
 module.exports = {
