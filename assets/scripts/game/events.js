@@ -48,7 +48,7 @@ const checkWins = function () {
   // checks horizontal wins
   if (board[0] && (board[0] === board[1]) && (board[0] === board[2])) {
     console.log(board[0] + ' wins');
-    $('winMessage').text(board[0] + ' wins');
+    $('.win-message').text(board[0] + ' wins');
     gameOver = true;
   } else if (board[3] && (board[3] === board[4]) && (board[3] === board[5])) {
     console.log(board[3] + ' wins');
