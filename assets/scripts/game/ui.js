@@ -9,9 +9,9 @@ const success = (data) => {
 };
 
 const getGamesSuccess = (data) => {
-  // app.game = data.game;
   console.log(data);
   console.log("get game in uiakjdhkjahd");
+  $('.stats-message').text("You've played " + data.games.length + " games.");
 };
 
 const updateGameSuccess = (data) => {

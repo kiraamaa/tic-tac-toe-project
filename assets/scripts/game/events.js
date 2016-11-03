@@ -48,6 +48,7 @@ const checkWins = function () {
   // checks horizontal wins
   if (board[0] && (board[0] === board[1]) && (board[0] === board[2])) {
     console.log(board[0] + ' wins');
+    $('winMessage').text(board[0] + ' wins');
     gameOver = true;
   } else if (board[3] && (board[3] === board[4]) && (board[3] === board[5])) {
     console.log(board[3] + ' wins');
@@ -231,7 +232,9 @@ const addHandlers = () => {
   $('.button-custom').on('click', onCreateGame);
   // clears board using new game button
   $('.button-custom').on('click', clearBoard);
-  $('.grab-stats').on('click', onGetAllGames);
+  // shows stats
+  $('.get-stats-button').on('click', onGetAllGames);
+
 
 };
 

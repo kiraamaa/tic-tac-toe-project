@@ -63,7 +63,9 @@
                   <li role="separator" class="divider"></li>
                   <li>
                     <a>
-                      <input type="button" class="button-stats" value="Get Stats">
+                      <button type="button" class="get-stats-button" data-toggle="modal" data-target="#myModal4">
+                        Get stats
+                      </button>
                     </a>
                   </li>
                 </ul>
@@ -80,7 +82,6 @@
     <div class="X">Player X</div>
     <div class="O">Player O</div>
     <input type="button" class="button-custom" value="New Game">
-    <input type="button" class="grab-stats" value="Grab stats">
   </div>
 
   <table class="game-board">
@@ -101,7 +102,10 @@
     </tr>
   </table>
 
-  <div class="signInAlert">Please sign in first.</div>
+  <div class="winMessage"></div>
+  <div class="stats-message"></div>
+
+
 
 <!-- Sign up modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -178,6 +182,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 </body>

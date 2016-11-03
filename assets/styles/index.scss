@@ -62,6 +62,13 @@ body {
   padding: 0;
 }
 
+.button-stats {
+  background: none;
+  border: 0;
+  font-family: 'Rubik', sans-serif;
+  padding: 0;
+}
+
 table {
   margin-left: auto;
   margin-right: auto;
@@ -74,11 +81,11 @@ table {
 td {
   border: 2px solid $background-color;
   -webkit-border-radius: 10px;
+  color: $font-color;
   font-size: 120px;
   height: 175px;
   text-align: center;
   width: 175px;
-  color: $font-color;
 }
 
 .players {
@@ -103,11 +110,6 @@ td {
   font-family: 'Rubik', sans-serif;
 }
 
-.button-stats {
-  color: $current-player-color;
-  font-family: 'Rubik', sans-serif;
-}
-
 .current-player {
   color: $font-color;
   font-family: 'Rubik', sans-serif;
@@ -123,4 +125,12 @@ td {
 .o {
   color: $font-color;
   font-family: 'Rubik', sans-serif;
+}
+
+.stats-message {
+  position: relative;
+  float: right;
+  top: 200px;
+  right: 400px;
+
 }
