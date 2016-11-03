@@ -21,16 +21,16 @@ body {
 }
 
 .navbar-custom {
-  background-color: $background-color;
+  background-color: $font-color;
 }
 
 .navbar-brand {
-  color: $font-color;
+  color: $background-color;
   font-family: 'Rubik', sans-serif;
 }
 
 .dropdown-toggle {
-  color: $font-color;
+  color: $background-color;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -78,6 +78,7 @@ td {
   height: 175px;
   text-align: center;
   width: 175px;
+  color: $font-color;
 }
 
 .players {
@@ -103,18 +104,18 @@ td {
 }
 
 .current-player {
-  color: $current-player-color;
+  color: $font-color;
   font-family: 'Rubik', sans-serif;
   -webkit-transform: scale(1.5);
 }
 
 .x {
-  color: $marker-color;
+  color: $font-color;
   font-family: 'Rubik', sans-serif;
 }
 
 
 .o {
-  color: $marker-color;
+  color: $font-color;
   font-family: 'Rubik', sans-serif;
 }
