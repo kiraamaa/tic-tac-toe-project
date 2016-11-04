@@ -11,7 +11,6 @@ const onSignUp = function (event) {
     .then(ui.success)
     .catch(ui.failure);
   $('#myModal').modal("hide");
-  console.log("Successfully signed up");
 };
 
 const onSignIn = function (event) {
@@ -21,7 +20,6 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .catch(ui.failure);
   $('#myModal2').modal("hide");
-  console.log("Successfully signed in");
 };
 
 const onSignOut = function (event) {
@@ -29,7 +27,6 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.success)
     .catch(ui.failure);
-    console.log("Successfully signed out");
 };
 
 const onChangePassword = function (event) {
@@ -39,7 +36,6 @@ const onChangePassword = function (event) {
     .then(ui.success)
     .catch(ui.failure);
   $('#myModal3').modal("hide");
-  console.log("changed password");
 };
 
 const addHandlers = () => {

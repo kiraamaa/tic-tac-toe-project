@@ -17,6 +17,14 @@ I began with the HTML/CSS and attempted to render multiple modals that showed up
 
 I was actually surprised that I accomplished as much as I did in a single week, and was helped immensely by working with another person. I wouldn't have thought that I could actually complete this just a few weeks ago, and I found that I thoroughly enjoy the feeling of satisfaction that comes from crafting a working app from scratch.
 
+As a user, I want to be able to sign up to play.
+As a user, I want to be able to start a new game.
+As a user, I want to know whose turn it is to play.
+As a user, I want to know who won or lost.
+As a user, I want to know how many games I've won or lost.
+As a user, I want to be able to play someone on another device.
+As a user, I want to be able to log in and retrieve my data.
+
 ## Unsolved Problems
 
 All of my gameplay logic and API calls work, and I surprisingly don't have any remaining bugs (or any that I know about after user-testing 150+ games). If I had more time I would make better user-facing messages and refine the color scheme, condense my code and eliminate redundancies, make better modals that pop up on page load, and re-organize my JS files so that my concerns were better differentiated.
