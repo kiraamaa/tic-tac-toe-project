@@ -535,16 +535,18 @@ webpackJsonp([0],[
 	var app = __webpack_require__(6);
 
 	var createGame = function createGame() {
-	  // let token = app.user.token;
+	  return (
+	    // let token = app.user.token;
 
-	  $.ajax({
-	    url: app.host + '/games',
-	    method: 'POST',
-	    headers: {
-	      Authorization: 'Token token=' + app.user.token
-	    },
-	    game: {}
-	  });
+	    $.ajax({
+	      url: app.host + '/games',
+	      method: 'POST',
+	      headers: {
+	        Authorization: 'Token token=' + app.user.token
+	      },
+	      game: {}
+	    })
+	  );
 	};
 
 	var getAllGames = function getAllGames(player_x) {
