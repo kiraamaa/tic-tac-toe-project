@@ -48,41 +48,41 @@ const checkWins = function () {
   // checks horizontal wins
   if (board[0] && (board[0] === board[1]) && (board[0] === board[2])) {
     console.log(board[0] + ' wins');
-    $('.win-message').text(board[0] + ' wins');
+    $('.win-message').text(board[0] + ' wins!');
     gameOver = true;
   } else if (board[3] && (board[3] === board[4]) && (board[3] === board[5])) {
     console.log(board[3] + ' wins');
-    $('.win-message').text(board[3] + ' wins');
+    $('.win-message').text(board[3] + ' wins!');
     gameOver = true;
   } else if (board[6] && (board[6] === board[7]) && (board[6] === board[8])) {
     console.log(board[6] + ' wins');
-    $('.win-message').text(board[6] + ' wins');
+    $('.win-message').text(board[6] + ' wins!');
     gameOver = true;
   }
 
   // checks vertical wins
   if (board[0] && (board[0] === board[3]) && (board[0] === board[6])) {
     console.log(board[0] + ' wins');
-    $('.win-message').text(board[0] + ' wins');
+    $('.win-message').text(board[0] + ' wins!');
     gameOver = true;
   } else if (board[1] && (board[1] === board[4]) && (board[1] === board[7])) {
     console.log(board[1] + ' wins');
-    $('.win-message').text(board[1] + ' wins');
+    $('.win-message').text(board[1] + ' wins!');
     gameOver = true;
   } else if (board[2] && (board[2] === board[5]) && (board[2] === board[8])) {
     console.log(board[2] + ' wins');
-    $('.win-message').text(board[2] + ' wins');
+    $('.win-message').text(board[2] + ' wins!');
     gameOver = true;
   }
 
   // checks diagonal wins
   if (board[0] && (board[0] === board[4]) && (board[0] === board[8])) {
     console.log(board[0] + ' wins');
-    $('.win-message').text(board[0] + ' wins');
+    $('.win-message').text(board[0] + ' wins!');
     gameOver = true;
   } else if (board[2] && (board[2] === board[4]) && (board[2] === board[6])) {
     console.log(board[2] + ' wins');
-    $('.win-message').text(board[2] + ' wins');
+    $('.win-message').text(board[2] + ' wins!');
     gameOver = true;
   }
   return gameOver;
@@ -91,6 +91,7 @@ const checkWins = function () {
 
 const boardMarker = function (event) {
   event.preventDefault();
+  $('.new-message').hide();
   let tile = $(this).attr('class');
   let tileClass = '.' + tile;
   // convert tile class to integer for index on board
@@ -142,7 +143,7 @@ const boardMarker = function (event) {
 
   } else if (glob.vars.turnCount === 9) {
       console.log('tie game');
-      $('.win-message').text("It's a tie");
+      $('.win-message').text("It's a tie!");
       glob.vars.gameOver = true;
   }
 };
@@ -222,6 +223,7 @@ const addHandlers = () => {
   $('.tile6').css('pointer-events', 'none');
   $('.tile7').css('pointer-events', 'none');
   $('.tile8').css('pointer-events', 'none');
+  $('.sign-message').show();
 
   // turns on click capability once logged in
   $('.tile0').on('click', boardMarker);
@@ -233,9 +235,6 @@ const addHandlers = () => {
   $('.tile6').on('click', boardMarker);
   $('.tile7').on('click', boardMarker);
   $('.tile8').on('click', boardMarker);
-
-
-  // $('.signInAlert').show();
 
   // creates new game using new game button
   $('.button-custom').on('click', onCreateGame);

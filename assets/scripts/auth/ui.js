@@ -9,6 +9,8 @@ const success = (data) => {
 const signInSuccess = (data) => {
   console.log(data);
   app.user = data.user;
+  $('.sign-message').hide();
+  $('.new-message').show();
 };
 
 const failure = (error) => {

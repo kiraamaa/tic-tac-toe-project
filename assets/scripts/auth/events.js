@@ -12,7 +12,6 @@ const onSignUp = function (event) {
     .catch(ui.failure);
   $('#myModal').modal("hide");
   console.log("Successfully signed up");
-
 };
 
 const onSignIn = function (event) {
