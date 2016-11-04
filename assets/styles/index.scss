@@ -129,12 +129,28 @@ td {
 
 .stats-message {
   float: right;
-  position: relative;
-  right: 400px;
-  top: 20px;
+  position: absolute;
+  right: 80px;
+  top: 150px;
 }
 
 .win-message {
-  float: right;
-  position: relative;
+  font-size: 20px;
+  padding: 100px;
+  position: fixed;
+  right: 60px;
+  top: 200px;
+}
+
+.sign-message {
+  position: fixed;
+  right: 15px;
+  top: 150px;
+}
+
+.new-message {
+  font-size: 14px;
+  position: fixed;
+  right: 15px;
+  top: 150px;
 }
