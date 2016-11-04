@@ -535,7 +535,7 @@ webpackJsonp([0],[
 	var app = __webpack_require__(6);
 
 	var createGame = function createGame() {
-	  var token = app.user.token;
+	  // let token = app.user.token;
 
 	  $.ajax({
 	    url: app.host + '/games',
