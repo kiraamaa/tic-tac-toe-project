@@ -24,6 +24,9 @@ All of my gameplay logic and API calls work, and I surprisingly don't have any r
 ## Wireframes
 
 [Sign Up Form](http://i.imgur.com/Bvp4znE.png)
+
 [Log In Form](http://i.imgur.com/1V2HmFT.png)
+
 [Game Board](http://i.imgur.com/QfMTN0j.png)
+
 [Win Message](http://i.imgur.com/LRwtgt2.png)
