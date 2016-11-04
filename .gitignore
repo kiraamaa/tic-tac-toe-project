@@ -1,9 +1,9 @@
 tmp
 dist
+# dependencies.js
 vendor.js
 specs.js
-dependencies.js
-*bundle.js
+# *bundle.js
 _SpecRunner.html
 *.woff2
 *.woff
