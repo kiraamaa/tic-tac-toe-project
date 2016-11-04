@@ -19,4 +19,11 @@ I was actually surprised that I accomplished as much as I did in a single week, 
 
 ## Unsolved Problems
 
-All of my gameplay logic and API calls work, and I surprisingly don't have any remaining bugs (or any that I know about after user-testing 150+ games). If I had more time I would make better user-facing messages and refine the color scheme, condense my code and eliminate redundancies, make better modals that pop up on page load, and re-organize my JS files so that my concerns were better differentiated. 
+All of my gameplay logic and API calls work, and I surprisingly don't have any remaining bugs (or any that I know about after user-testing 150+ games). If I had more time I would make better user-facing messages and refine the color scheme, condense my code and eliminate redundancies, make better modals that pop up on page load, and re-organize my JS files so that my concerns were better differentiated.
+
+## Wireframes
+
+[Sign Up Form](http://i.imgur.com/Bvp4znE.png)
+[Log In Form](http://i.imgur.com/1V2HmFT.png)
+[Game Board](http://i.imgur.com/QfMTN0j.png)
+[Win Message](http://i.imgur.com/LRwtgt2.png)
