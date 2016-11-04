@@ -3,25 +3,25 @@
 const app = require ('../app');
 
 const success = (data) => {
+  // console.log(data);
 };
 
 const signInSuccess = (data) => {
+  // console.log(data);
   app.user = data.user;
-  $('.sign-message').hide();
-  $('.new-message').show();
 };
 
 const failure = (error) => {
-  console.error(error);
+  // console.error(error);
 };
 
 const changePassword = () => {
-  console.log ('Password changed');
+  // console.log ('Password changed');
 };
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log ('Signed out');
+  // console.log ('Signed out');
 };
 
 
