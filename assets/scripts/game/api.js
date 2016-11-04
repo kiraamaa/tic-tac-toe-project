@@ -14,6 +14,7 @@ const createGame = () => {
     },
     game: {},
   });
+}
 
 const getAllGames = (player_x) =>
   $.ajax({
