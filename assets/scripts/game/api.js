@@ -3,7 +3,7 @@
 const app = require('../app');
 
 
-const createGame = () => {
+const createGame = () =>
   // let token = app.user.token;
 
   $.ajax({
@@ -14,7 +14,6 @@ const createGame = () => {
     },
     game: {},
   });
-}
 
 const getAllGames = (player_x) =>
   $.ajax({

@@ -13,6 +13,7 @@ const onCreateGame = function (event) {
   api.createGame()
     .then(ui.success)
     .catch(ui.failure);
+  $('.new-message').hide();
 };
 
 const onGetAllGames = function () {

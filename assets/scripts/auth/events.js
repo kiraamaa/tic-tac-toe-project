@@ -20,6 +20,8 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .catch(ui.failure);
   $('#myModal2').modal("hide");
+  $('.sign-message').hide();
+  $('.new-message').show();
 };
 
 const onSignOut = function (event) {
