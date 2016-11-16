@@ -158,6 +158,7 @@ const clearBoard = function () {
   $('.X').css("color", "white");
   $('.O').css("color", "");
   $('.win-message').text('');
+  $('.new-message').text('')
 
   // clears tiles
   $('.tile0').html('');
