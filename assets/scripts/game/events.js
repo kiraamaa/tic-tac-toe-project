@@ -14,6 +14,7 @@ const onCreateGame = function (event) {
     .then(ui.success)
     .catch(ui.failure);
   $('.new-message').hide();
+  $('.stats-message').hide();
 };
 
 const onGetAllGames = function () {
