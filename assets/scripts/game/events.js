@@ -14,7 +14,6 @@ const onCreateGame = function (event) {
     .then(ui.success)
     .catch(ui.failure);
   $('.new-message').hide();
-  $('.stats-message').hide();
 };
 
 const onGetAllGames = function () {
@@ -159,7 +158,7 @@ const clearBoard = function () {
   $('.X').css("color", "white");
   $('.O').css("color", "");
   $('.win-message').text('');
-  $('.new-message').text('')
+  $('.stats-message').text('')
 
   // clears tiles
   $('.tile0').html('');
