@@ -16,11 +16,12 @@
 3. Write out user stories for game.
 4. Craft a list of necessary parts.
 5. Devise a version control workflow:
--   Branch large-scope features such as 'front-end' or 'back-end' off of 'master', and then branch smaller feature branches off of those.
--   Begin coding.
--   Revisit list of necessary parts needed.
+  -   Branch large-scope features such as 'front-end' or 'back-end' off of 'master', and then branch smaller feature branches off of those.
+  -   Begin coding.
+  -   Revisit list of necessary parts needed.
 6. Revise version control workflow:
--   Create a 'development' branch and for each feature make a single branch off of it, then merge that branch back into 'development'. -   Finally, merge back into 'master'. Also, create a 'to-do' list that is added to when coding and coming across issues or thinking of ideas, so that the focus is only on one problem at a time.
+  -   Create a 'development' branch and for each feature make a single branch off of it, then merge that branch back into 'development'.
+  -   Finally, merge back into 'master'. Also, create a 'to-do' list that is added to when coding and coming across issues or thinking of ideas, so that the focus is only on one problem at a time.
 7. Revise code, spending time focusing on the requirements as opposed to interesting problems that are unimportant.
 8. Once code is in a 'near-production' state, spend time working on testing as many possible use-cases as possible.
 9. Once satisfied with completion of tests, remove all debugger, console.log, and other WIP code.
